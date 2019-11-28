@@ -1,0 +1,57 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Packages</li>
+  </ol>
+</nav>
+<div class="model-dialog">
+  <div class="modal-content">
+      
+<div class="col-xs-12">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title">Packages</h3>
+            <div class="text-right">
+              <button class="btn btn-sm btn-primary" data-toggle="modal" (click)="newPackage()">
+                <span class="fa fa-plus"></span>
+              </button>
+          </div>
+  <div  class="table-responsive b0">
+    <table  class="table table-hover">
+      <thead >
+        <tr >
+          <th  style="width:80px"><strong >ID</strong></th>
+          <th ><strong >NAME</strong></th>
+          <th ><strong >DESCRIPTION</strong></th>
+          <th ><strong >PRICE</strong></th>
+          <th>Image</th>
+          <th  class="text-center"><strong >ACTION</strong></th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let li of apackage">
+          <td >{{li.packageId}}</td>
+          <td >{{li.packageType}}</td>
+          <td >{{li.packageDescription}}</td>
+          <td >{{li.packagePrice}}</td>
+          <td><img [attr.src]="li.profilePath" height="60px" width="60"/></td>
+          <td  class="text-center">
+            <!-- <button  class="btn btn-sm btn-secondary"
+              type="button"><em  class="fa fa-search"></em>
+            </button> -->
+              <button class="btn btn-sm btn-danger" (click)="deletePackage(li)">
+                <span class="fa fa-trash"></span>
+              </button>
+              <button class="btn btn-sm btn-primary" (click)="updatePackage(li)">
+                <span class="fa fa-pencil"></span>
+              </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+      </div>
+    </div>
+</div>
+</div>
+</div>

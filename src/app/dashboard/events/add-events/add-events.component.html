@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Events</li>
+    </ol>
+  </nav>
+  <div class="box">
+    <div class="box-header">
+      <h3>Event</h3>
+      <form (ngSubmit)="addEvent()">
+        <div class="form-group">
+          <label for="eventName" class="sr-only">Event Name</label>
+          <input type="text" name="eventName" class="form-control" placeholder="Event Name" [(ngModel)]="event.eventName">
+        </div>
+        <div class="input-group mb-3">
+            <label for="packagePrice">Choose Photo</label>
+            <div class="custom-file">
+              <input type="file" class="file-input" id="file" aria-describedby="file" (change)="onFileSelected($event)">
+            </div>
+          </div>
+        <div>
+          <br/>
+          <input type="submit" value="Save" class="btn btn-success">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

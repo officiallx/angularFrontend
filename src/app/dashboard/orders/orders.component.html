@@ -1,0 +1,70 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Orders</li>
+    </ol>
+  </nav>
+  <div class="col-xs-12">
+      <div class="box">
+        <div class="box-header">
+          <h3 class="box-title">Orders</h3>
+          <!-- <div class="ibox-content m-b-sm border-bottom">
+              <div class="row">
+                  <div class="col-sm-4">
+                      <div class="form-group">
+                          <label class="col-form-label" for="order_id">Order ID</label>
+                          <input type="text" id="order_id" name="order_id" value="" placeholder="Order ID" class="form-control">
+                      </div>
+                  </div>
+                </div>
+          </div>   -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body table-responsive no-padding">
+          <table class="table table-hover">
+            <tbody>
+              <tr>
+              <th>Order Id</th>
+              <th>User</th>
+              <th>Event Name</th>
+              <th>Package Name</th>
+              <th>Event Venue</th>
+              <th>Event Address</th>
+              <th>Selected Service</th>
+              <th>Event Date</th>
+              <th>Event Time</th>
+              <th>Guest Count</th>
+              <!-- <th>Status</th> -->
+              <!-- <th>Status</th> -->
+              <th>Action</th>
+            </tr>
+            <tr *ngFor="let list of order">
+              <td>{{list.orderId}}</td>
+              <td>{{list.userId.name}}</td>
+              <td>{{list.eventName}}</td>
+              <td>{{list.packageName}}</td>
+              <td>{{list.eventVenue}}</td>
+              <td>{{list.eventAddress}}</td>
+              <td>{{list.selectedService}}</td>
+              <td>{{list.eventDateTime.eventDate}}</td>
+              <td>{{list.eventDateTime.eventTime}}</td>
+              <td>{{list.eventDateTime.guest_count}}</td>
+              <!-- <td>{{list.IsActive ? 'Approved ' : 'Pending'}}</td> -->
+              <!-- <td><button class="label label-primary" data-placement="top" data-toggle="tooltip" title="Click to Change" id="btnapprove" (click)="change()">Pending</button></td> -->
+              <!-- <td><button class="btn btn-primary waves-effect waves-light" id="btnapprove" (click)="change()" ng-bind="btnactivate" type="submit" value="Activate">Pending</button></td> -->
+              <td>
+                  <!-- <button  class="btn btn-secondary btn-sm" type="button" (click)="manageOrder(list)">
+                      <i class="fa fa-search"></i>
+                    </button> -->
+                    <button  class="btn btn-danger btn-sm" type="button" (click)="deleteOrder(list)">
+                      <i class="glyphicon glyphicon-trash"></i>
+                    </button>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+    </div>

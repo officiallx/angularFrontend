@@ -1,0 +1,134 @@
+<div class="container-fluid">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Profile</li>
+    </ol>
+  </nav>
+  <div class="col-md-4">
+    <!-- Widget: user widget style 1 -->
+    <div class="box box-widget widget-user">
+      <!-- Add the bg color to the header using any of the bg-* classes -->
+      <div class="widget-user-header bg-grey">
+        <h3 class="widget-user-username">Alexander Pierce</h3>
+        <h5 class="widget-user-desc">Web Designer</h5>
+      </div>
+      <div class="widget-user-image">
+        <img class="img-circle" src="../../../assets/img/user.png" alt="User Avatar">
+      </div>
+      <!-- /.widget-user -->
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+      </div>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+      </div>
+    </div>
+
+  </div>
+  <!--/col-3-->
+  <div class="col-md-8">
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#home">Edit Profile</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="home">
+        <hr>
+        <form class="form" id="registrationForm">
+          <div class="form-group">
+
+            <div class="col-xs-6">
+              <label for="first_name">
+                <h4>First name</h4>
+              </label>
+              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name"
+                title="enter your first name if any.">
+            </div>
+          </div>
+          <div class="form-group">
+
+            <div class="col-xs-6">
+              <label for="last_name">
+                <h4>Last name</h4>
+              </label>
+              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name"
+                title="enter your last name if any.">
+            </div>
+          </div>
+
+          <div class="form-group">
+
+            <div class="col-xs-6">
+              <label for="phone">
+                <h4>Phone</h4>
+              </label>
+              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone"
+                title="enter your phone number if any.">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-xs-6">
+              <label for="mobile">
+                <h4>Mobile</h4>
+              </label>
+              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number"
+                title="enter your mobile number if any.">
+            </div>
+          </div>
+          <div class="form-group">
+
+            <div class="col-xs-6">
+              <label for="email">
+                <h4>Email</h4>
+              </label>
+              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com"
+                title="enter your email.">
+            </div>
+          </div>
+          <div class="form-group">
+
+            <div class="col-xs-6">
+              <label for="email">
+                <h4>Location</h4>
+              </label>
+              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
+            </div>
+          </div>
+          <div class="form-group">
+
+            <div class="col-xs-6">
+              <label for="password">
+                <h4>Password</h4>
+              </label>
+              <input type="password" class="form-control" name="password" id="password" placeholder="password"
+                title="enter your password.">
+            </div>
+          </div>
+          <div class="form-group">
+
+            <div class="col-xs-6">
+              <label for="confirmPassword">
+                <h4>Confirm Password</h4>
+              </label>
+              <input type="password" class="form-control" name="confirmPassword" id="confirmPassword"
+                placeholder="confirm password" title="enter your confirm password.">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-xs-12">
+              <br>
+              <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i>
+                Save</button>&nbsp;
+              &nbsp;<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
