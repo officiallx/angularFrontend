@@ -1,13 +1,18 @@
 {
   "name": "my-catering-app",
   "version": "0.0.0",
+  "engines": {
+		"node": "v10.16.3",
+		"npm": "6.9.0"
+	},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+	"postinstall": "ng build --output-path angularapp  --aot --prod"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +24,8 @@
     "@angular/platform-browser": "^8.2.14",
     "@angular/platform-browser-dynamic": "^8.2.14",
     "@angular/router": "^8.2.14",
+	"@angular/cli": "^8.3.20",
+    "@angular/compiler-cli": "^8.2.14",
     "@fullcalendar/core": "^4.3.1",
     "@fullcalendar/daygrid": "^4.3.0",
     "@fullcalendar/list": "^4.3.0",
@@ -33,12 +40,11 @@
     "rxjs": "~6.5.3",
     "rxjs-compat": "^6.5.3",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+	"typescript": "~3.5.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.20",
-    "@angular/cli": "^8.3.20",
-    "@angular/compiler-cli": "^8.2.14",
     "@angular/language-service": "^8.2.14",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "^2.0.8",
@@ -53,7 +59,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
-    "tslint": "~5.11.0",
-    "typescript": "~3.5.3"
+    "tslint": "~5.11.0"
+    
   }
 }
