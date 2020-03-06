@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
-import{HttpResponse} from '@angular/common/http';
+import {HttpResponse} from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
-import{ApplicationUser}  from '../models/user';
+import {ApplicationUser} from '../models/user';
 import { Observable } from 'rxjs';
 
 
 
 @Injectable()
 export class UserService {
-  private baseUrl:string='http://localhost:8080/api';
+  private baseUrl:string='http://e-catering.herokuapp.com/api';
   private headers = new HttpHeaders({'Content-Type':'application/json'});
   private options = {headers:this.headers};
   private user = new ApplicationUser();

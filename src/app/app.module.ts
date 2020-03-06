@@ -10,11 +10,11 @@ import { FooternavbarComponent } from './layout/footernavbar/footernavbar.compon
 import { TopnavbarComponent } from './layout/topnavbar/topnavbar.component';
 import { CalendarComponent } from './dashboard/calendar/calendar.component';
 import { BaseComponent } from './layout/base/base.component';
-import{FormsModule}   from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 import { UsersComponent } from './dashboard/users/users.component';
 import { OrdersComponent } from './dashboard/orders/orders.component';
 import { ProfileComponent } from './dashboard/profile/profile.component';
-import { HttpClientModule} from "@angular/common/http";
+import { HttpClientModule} from '@angular/common/http';
 import { UserService } from './shared-service/user.service';
 import { AddressComponent } from './dashboard/address/address.component';
 import { AddAddressComponent } from './dashboard/address/add-address/add-address.component';

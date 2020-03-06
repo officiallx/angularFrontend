@@ -8,7 +8,7 @@ import { Breakfast } from '../models/breakfast';
 })
 export class BreakfastService {
 
-  private baseUrl:string='http://localhost:8080/api';
+  private baseUrl:string='http://e-catering.herokuapp.com/api';
   private headers = new HttpHeaders({'Content-Type':'application/json'});
   private options = {headers:this.headers};
   private breakfast = new Breakfast();
