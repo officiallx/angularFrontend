@@ -1,5 +1,5 @@
 {
-  "name": "cateringwebsite",
+  "name": "my-catering-app",
   "version": "0.0.0",
   "engines": {
 		"node": "v10.16.3",
@@ -12,7 +12,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-	"postinstall": "ng build--aot--prod"
+	"postinstall": "ng build --output-path dist"
   },
   
   "private": true,
@@ -42,14 +42,11 @@
     "rxjs": "~6.5.3",
     "rxjs-compat": "^6.5.3",
     "tslib": "^1.10.0",
-	"typescript": "~3.5.3",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.20",
     "@angular/language-service": "^8.2.14",
-	"@angular/cli": "^8.3.20",
-    "@angular/compiler-cli": "^8.2.14",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "~8.9.4",
