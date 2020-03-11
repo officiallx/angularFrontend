@@ -1,4 +1,3 @@
-import * as cors from "cors";
 
 const express = require('express');
 const http = require('http');
@@ -6,8 +5,6 @@ const path = require('path');
 const request = require('request');
 
 const app = express();
-
-app.options('*', cors());
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from

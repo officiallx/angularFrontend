@@ -6,8 +6,8 @@
       <div class="pull-left image">
         <img src="assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
       </div>
-      <div class="pull-left info">
-        <p>Admin</p>
+      <div class="pull-left info" *ngFor="let user of users" >
+        <p >{{user.name}}}}</p>
         <a href="#"><i class="fa fa-circle text-success"></i> Admin</a>
       </div>
     </div>
