@@ -11,8 +11,7 @@ import { BaseComponent } from './base/base.component';
   BaseComponent],
   imports: [
     CommonModule,
-    RouterModule,
-    LayoutModule
+    RouterModule
   ]
 })
 export class LayoutModule { }
