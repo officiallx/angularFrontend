@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class LunchService {
 
-  private baseUrl:string='http://e-catering.herokuapp.com/api';
+  private baseUrl:string='https://e-catering.herokuapp.com/api';
   private headers = new HttpHeaders({'Content-Type':'application/json'});
   private options = {headers:this.headers};
   private lunch = new Lunch();
@@ -33,7 +33,7 @@ export class LunchService {
 
     return this.httpClient.post(this.baseUrl+'/lunch',JSON.stringify(lunch), this.options);
   }
-   
+
    updateLunch(lunch:Lunch){
 
     return this.httpClient.post(this.baseUrl+'/lunch',JSON.stringify(lunch), this.options);

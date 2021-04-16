@@ -13,7 +13,7 @@ import { Orders } from '../models/orders';
 
 @Injectable()
 export class OrderService {
-  private baseUrl:string='http://e-catering.herokuapp.com/api';
+  private baseUrl:string='https://e-catering.herokuapp.com/api';
   private headers = new HttpHeaders({'Content-Type':'application/json'});
   private options = {headers:this.headers};
   private order = new Orders();
@@ -37,8 +37,8 @@ export class OrderService {
   createOrder(order:Orders){
 
     return this.httpClient.post(this.baseUrl+'/order',JSON.stringify(order), this.options);
-  } 
-   
+  }
+
    updateEvent(order:Orders){
 
     return this.httpClient.put(this.baseUrl+'/order',JSON.stringify(order), this.options);

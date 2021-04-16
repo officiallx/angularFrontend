@@ -13,7 +13,7 @@ import { Event } from '../models/event';
 
 @Injectable()
 export class EventsService {
-  private baseUrl:string='http://e-catering.herokuapp.com/api';
+  private baseUrl:string ='https://e-catering.herokuapp.com/api';
   private headers = new HttpHeaders({'Content-Type':'application/json'});
   private options = {headers:this.headers};
   private event = new Event();
@@ -37,8 +37,8 @@ export class EventsService {
   createEvent(event:Event){
 
     return this.httpClient.post(this.baseUrl+'/event',JSON.stringify(event), this.options);
-  } 
-   
+  }
+
    updateEvent(event:Event){
 
     return this.httpClient.put(this.baseUrl+'/event',JSON.stringify(event), this.options);

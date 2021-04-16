@@ -13,7 +13,7 @@ import { Address } from '../models/address';
 
 @Injectable()
 export class AddressService {
-  private baseUrl:string='http://e-catering.herokuapp.com/api';
+  private baseUrl:string='https://e-catering.herokuapp.com/api';
   private headers = new HttpHeaders({'Content-Type':'application/json'});
   private options = {headers:this.headers};
   private address = new Address();
@@ -37,7 +37,7 @@ export class AddressService {
 
     return this.httpClient.post(this.baseUrl+'/address',JSON.stringify(address), this.options);
   }
-   
+
    updateAddress(address:Address){
 
     return this.httpClient.post(this.baseUrl+'/address',JSON.stringify(address), this.options);

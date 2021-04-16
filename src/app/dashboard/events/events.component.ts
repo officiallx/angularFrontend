@@ -14,52 +14,52 @@ import { PackagesComponent } from '../packages/packages.component';
 })
 export class EventsComponent implements OnInit {
 
-  private event:any;
+  private event: any;
   private share: any;
-  constructor(private eventService:EventsService, private _router:Router, private http: HttpClient
+  constructor(private eventService: EventsService, private _router: Router, private http: HttpClient
     ) { }
 
   ngOnInit() {
-    this.eventService.getEvents().subscribe((events: Event[])=>{
+    this.eventService.getEvents().subscribe((events: Event[]) => {
       console.log(events);
-      this.event=events;
-    },(error: any)=>{
+      this.event = events;
+    }, (error: any) => {
       console.log(error);
-    })
+    });
   }
-  deleteEvent(events: Event){
-    this.eventService.deleteEvent(events.eventId).subscribe((data)=>{
-        this.event.splice(this.event.indexOf(events),1);
-    },(error: any)=>{
+  deleteEvent(events: Event) {
+    this.eventService.deleteEvent(events.eventId).subscribe((data) => {
+        this.event.splice(this.event.indexOf(events), 1);
+    }, (error: any) => {
       console.log(error);
     });
   }
 
-   updateEvent(event: Event){  
+   updateEvent(event: Event) {
      this.eventService.setter(event);
      this._router.navigate(['/add-event']);
 
 
    }
-   newEvent(){
-   let event = new Event();
-    this.eventService.setter(event);
-     this._router.navigate(['/add-event']);
-   
+   newEvent() {
+   const event = new Event();
+   this.eventService.setter(event);
+   this._router.navigate(['/add-event']);
+
    }
 
-   manageEvent(list: any){
-    //console.log(this.eventService.getter());
+   manageEvent(list: any) {
+    // console.log(this.eventService.getter());
    this.eventService.setter(list);
 
-   //console.log(list.eventId)
-    this.http.get("http://localhost:8080/api/event/" + list.eventId + "/packages").subscribe( res => {
-      
+   // console.log(list.eventId)
+   this.http.get('https://e-catering.herokuapp.com/api/event/' + list.eventId + '/packages').subscribe( res => {
+
       this.share = res;
       console.log(this.share);
-      //this.modalService.open(PackagesComponent)
+      // this.modalService.open(PackagesComponent)
       this._router.navigate(['/packages']);
-    })
+    });
    }
 
 }

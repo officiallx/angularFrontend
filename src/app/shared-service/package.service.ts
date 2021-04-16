@@ -8,52 +8,52 @@ import { EventsService } from './events.service';
   providedIn: 'root'
 })
 export class PackageService {
-  private baseUrl:string='http://e-catering.herokuapp.com/api';
-  private headers = new HttpHeaders({'Content-Type':'application/json'});
-  private options = {headers:this.headers};
+  private baseUrl = 'https://e-catering.herokuapp.com/api';
+  private headers = new HttpHeaders({'Content-Type': 'application/json'});
+  private options = {headers: this.headers};
   private package = new Package();
-  constructor(private httpClient:HttpClient, private eventsService: EventsService) { }
+  constructor(private httpClient: HttpClient, private eventsService: EventsService) { }
 
-  getAll(){
-    return this.httpClient.get(this.baseUrl+'/event/getAll');
+  getAll() {
+    return this.httpClient.get(this.baseUrl + '/event/getAll');
   }
 
-  getPackages(eventId:Number){
+  getPackages(eventId: Number) {
 
-    return this.httpClient.get(this.baseUrl+'/event/'+ eventId + '/packages');
+    return this.httpClient.get(this.baseUrl + '/event/' + eventId + '/packages');
   }
 
-  getPackage(eventId:Number, packageId:Number){
+  getPackage(eventId: Number, packageId: Number) {
 
-    return this.httpClient.get(this.baseUrl+'/event'+ eventId + '/package' +packageId);
+    return this.httpClient.get(this.baseUrl + '/event' + eventId + '/package' + packageId);
   }
 
-  deletePackage(packageId:Number){
+  deletePackage(packageId: Number) {
     const eventId = this.eventsService.getter().eventId;
-    return this.httpClient.delete(this.baseUrl+'/event/'+eventId+'/package/'+packageId);
+    return this.httpClient.delete(this.baseUrl + '/event/' + eventId + '/package/' + packageId);
   }
 
 
-  createPackage(apackage:Package){
+  createPackage(apackage: Package) {
     const eventId = this.eventsService.getter().eventId;
-    return this.httpClient.post(this.baseUrl+'/event/'+eventId+'/package',JSON.stringify(apackage), this.options);
+    return this.httpClient.post(this.baseUrl + '/event/' + eventId + '/package', JSON.stringify(apackage), this.options);
   }
-   
-   updatePackage(apackage:Package){
+
+   updatePackage(apackage: Package) {
     const eventId = this.eventsService.getter().eventId;
-    return this.httpClient.post(this.baseUrl+'/event/'+eventId+'/package',JSON.stringify(apackage), this.options);
+    return this.httpClient.post(this.baseUrl + '/event/' + eventId + '/package', JSON.stringify(apackage), this.options);
   }
 
-  errorHandler(error:Response){
+  errorHandler(error: Response) {
 
-    return Observable.throw(error||"SERVER ERROR");
+    return Observable.throw(error || 'SERVER ERROR');
  }
 
-   setter(apackage:Package){
-     this.package=apackage;
+   setter(apackage: Package) {
+     this.package = apackage;
    }
 
-  getter(){
+  getter() {
     return this.package;
   }
 }

@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class UserService {
-  private baseUrl:string='http://e-catering.herokuapp.com/api';
+  private baseUrl:string='https://e-catering.herokuapp.com/api';
   private headers = new HttpHeaders({'Content-Type':'application/json'});
   private options = {headers:this.headers};
   private user = new ApplicationUser();
@@ -38,7 +38,7 @@ export class UserService {
 
     return this.httpClient.post(this.baseUrl+'/user',JSON.stringify(user), this.options);
   }
-   
+
    updateUser(user:ApplicationUser){
 
     return this.httpClient.post(this.baseUrl+'/user',JSON.stringify(user), this.options);

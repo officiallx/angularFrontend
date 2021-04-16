@@ -8,7 +8,7 @@ import { Breakfast } from '../models/breakfast';
 })
 export class BreakfastService {
 
-  private baseUrl:string='http://e-catering.herokuapp.com/api';
+  private baseUrl:string='https://e-catering.herokuapp.com/api';
   private headers = new HttpHeaders({'Content-Type':'application/json'});
   private options = {headers:this.headers};
   private breakfast = new Breakfast();
@@ -23,7 +23,7 @@ export class BreakfastService {
 
     return this.httpClient.get(this.baseUrl+'/breakfast'+breakfastId);
   }
-  
+
   deleteBreakfast(packageId:Number){
     return this.httpClient.get(this.baseUrl+'/breakfast/'+packageId);
   }
@@ -33,7 +33,7 @@ export class BreakfastService {
 
     return this.httpClient.post(this.baseUrl+'/breakfast',JSON.stringify(breakfast), this.options);
   }
-   
+
    updateBreakfast(breakfast:Breakfast){
 
     return this.httpClient.post(this.baseUrl+'/breakfast',JSON.stringify(breakfast), this.options);

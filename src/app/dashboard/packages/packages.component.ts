@@ -14,34 +14,34 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class PackagesComponent implements OnInit {
 
   private apackage: Package[];
-  private event:Event[];
+  private event: Event[];
   private eventid: any;
-  //event1 : Event = new Event();
-  constructor(private packageService: PackageService, private _router: Router, private eventService:EventsService
+  // event1 : Event = new Event();
+  constructor(private packageService: PackageService, private _router: Router, private eventService: EventsService
     ) { }
-  //@Input() list: any;
+  // @Input() list: any;
 
   ngOnInit() {
-    //console.log(this.list)
-    //this.showPackage
-    //console.log(event.target)
+    // console.log(this.list)
+    // this.showPackage
+    // console.log(event.target)
     this.eventid = this.eventService.getter().eventId;
-    console.log(this.eventid)
-    this.eventService.getEvents().subscribe((events: Event[])=>{
-      
-      this.event=events;
+    console.log(this.eventid);
+    this.eventService.getEvents().subscribe((events: Event[]) => {
+
+      this.event = events;
       console.log();
-    },(error: any)=>{
+    }, (error: any) => {
       console.log(error);
-    })
-    
+    });
+
     this.packageService.getPackages(this.eventid).subscribe((packages: Package[]) => {
       console.log(packages);
       this.apackage = packages;
     }, (error: any) => {
       console.log(error);
-    })
-    
+    });
+
   }
 
   deletePackage(apackage: Package) {
@@ -57,9 +57,9 @@ export class PackagesComponent implements OnInit {
     this._router.navigate(['/add-packages']);
 
   }
-  
+
   newPackage() {
-    let apackage = new Package();
+    const apackage = new Package();
     this.packageService.setter(apackage);
     this._router.navigate(['/add-packages']);
   }
