@@ -5,6 +5,7 @@ import { FooternavbarComponent } from './footernavbar/footernavbar.component';
 import { TopnavbarComponent } from './topnavbar/topnavbar.component';
 import { RouterModule } from '@angular/router';
 import { BaseComponent } from './base/base.component';
+import {AppModule} from '../app.module';
 
 @NgModule({
   declarations: [

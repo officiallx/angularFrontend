@@ -39,27 +39,27 @@ import { DinnerComponent } from './dashboard/dinner/dinner.component';
 import { AddBreakfastComponent } from './dashboard/breakfast/add-breakfast/add-breakfast.component';
 import { AddDinnerComponent } from './dashboard/dinner/add-dinner/add-dinner.component';
 import { AddLunchComponent } from './dashboard/lunch/add-lunch/add-lunch.component';
+import {LayoutModule} from './layout/layout.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    AsidenavbarComponent, 
-    FooternavbarComponent, 
-    TopnavbarComponent, 
+    AsidenavbarComponent,
+    FooternavbarComponent,
+    TopnavbarComponent,
     CalendarComponent,
-    BaseComponent, 
     UsersComponent,
-    AddUserComponent, 
-    OrdersComponent, 
-    ProfileComponent, 
+    AddUserComponent,
+    OrdersComponent,
+    ProfileComponent,
     AddressComponent,
-    AddAddressComponent, 
-    EventsComponent, 
-    AddEventsComponent, 
-    PackagesComponent, 
-    AddPackagesComponent, 
+    AddAddressComponent,
+    EventsComponent,
+    AddEventsComponent,
+    PackagesComponent,
+    AddPackagesComponent,
     StaffComponent,
     PositionComponent,
     AddPositionComponent,
@@ -76,19 +76,20 @@ import { AddLunchComponent } from './dashboard/lunch/add-lunch/add-lunch.compone
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    LayoutModule,
     NgbModule.forRoot()
   ],
   providers: [
-    UserService, 
-    AddressService, 
-    EventsService, 
+    UserService,
+    AddressService,
+    EventsService,
     PackageService,
-    OrderService, 
+    OrderService,
     PositionService],
 
   bootstrap: [AppComponent],
   entryComponents: [
-    
+
   ]
 })
 export class AppModule { }
