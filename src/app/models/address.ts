@@ -1,4 +1,4 @@
 export class Address {
-    aId:Number;
-    street:string;
+    public aId:number;
+    public street:string;
 }

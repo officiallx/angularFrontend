@@ -1,8 +1,8 @@
 export class Package {
 
-    packageId:Number;
-    packageType:string;
-    packageDescription:string;
-    packagePrice:string;
-    profilePath:string;
+  public packageId:number;
+  public packageType:string;
+  public packageDescription:string;
+  public packagePrice:string;
+  public profilePath:string;
 }

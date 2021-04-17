@@ -1,5 +1,5 @@
 export class Event {
-    eventId:Number;
-    eventName:string;
-    profilePath:string;
+  public eventId:number;
+  public eventName:string;
+  public profilePath:string;
 }

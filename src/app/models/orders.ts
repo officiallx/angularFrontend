@@ -1,10 +1,10 @@
 export class Orders {
 
-    orderId: Number;
-    packageName: String;
-    eventVenue: String;
-    eventAddress: String;
-    eventName: String;
-    selectedService: String;
-    userId: Number;
+  public orderId: number;
+  public packageName: string;
+  public eventVenue: string;
+  public eventAddress: string;
+  public eventName: string;
+  public selectedService: string;
+  public userId: number;
 }

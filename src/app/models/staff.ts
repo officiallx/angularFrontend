@@ -3,11 +3,11 @@ import { Position } from './position';
 
 export class Staff {
 
-    staffId: Number
-    staffFname: String
-    staffLname: String
-    staffContact: String
-    staffEmail: String
-    staffAddress: Address;
-    staffPosition: Position;
+  public staffId: number;
+  public staffFname: string;
+  public staffLname: string;
+  public staffContact: string;
+  public staffEmail: string;
+  public staffAddress: Address;
+  public staffPosition: Position;
 }

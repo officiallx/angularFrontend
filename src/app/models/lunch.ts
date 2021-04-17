@@ -2,7 +2,7 @@ import { Package } from './package';
 
 export class Lunch {
 
-    lunchId: Number;
-    lunchName: String
-    aPackage: Package;
+  public lunchId: number;
+  public lunchName: string;
+  public aPackage: Package;
 }

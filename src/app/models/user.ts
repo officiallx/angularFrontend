@@ -1,7 +1,7 @@
 export class ApplicationUser {
-    id:Number;
-    name:string;
-    contact:string;
-    username:string;
-    password:string;
+  public id:number;
+  public name:string;
+  public contact:string;
+  public username:string;
+  public password:string;
 }

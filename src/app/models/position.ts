@@ -1,4 +1,4 @@
 export class Position {
-    pId: Number
-    positionType: String
+  public pId: number;
+  public positionType: string;
 }
