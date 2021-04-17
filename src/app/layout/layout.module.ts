@@ -9,10 +9,11 @@ import {AppModule} from '../app.module';
 
 @NgModule({
   declarations: [
-    BaseComponent],
+    ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    AppModule
   ]
 })
 export class LayoutModule { }

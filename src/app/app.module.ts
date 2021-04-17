@@ -39,7 +39,6 @@ import { DinnerComponent } from './dashboard/dinner/dinner.component';
 import { AddBreakfastComponent } from './dashboard/breakfast/add-breakfast/add-breakfast.component';
 import { AddDinnerComponent } from './dashboard/dinner/add-dinner/add-dinner.component';
 import { AddLunchComponent } from './dashboard/lunch/add-lunch/add-lunch.component';
-import {LayoutModule} from './layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -70,13 +69,13 @@ import {LayoutModule} from './layout/layout.module';
     AddBreakfastComponent,
     AddDinnerComponent,
     AddLunchComponent,
+    BaseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    LayoutModule,
     NgbModule.forRoot()
   ],
   providers: [
@@ -88,8 +87,11 @@ import {LayoutModule} from './layout/layout.module';
     PositionService],
 
   bootstrap: [AppComponent],
-  entryComponents: [
-
-  ]
+  exports: [
+    TopnavbarComponent,
+    AsidenavbarComponent,
+    FooternavbarComponent
+  ],
+  entryComponents: []
 })
 export class AppModule { }
