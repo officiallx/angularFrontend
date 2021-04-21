@@ -17,11 +17,13 @@
   "scripts": {
     "ng": "ng",
     "start": "node app/server.js",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev": "nodemon -x ts-node app/server.js"
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && ng serve -o",
+    "preinstall": "npm install -g @angular/cli",
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
