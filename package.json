@@ -6,6 +6,14 @@
     "npm": "6.14.8",
     "cors": "^2.8.5"
   },
+  "compilerOptions": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+  },
   "scripts": {
     "ng": "ng",
     "start": "node app/server.js",
@@ -13,7 +21,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod"
+    "dev": "nodemon -x ts-node app/server.js"
   },
   "private": true,
   "dependencies": {
@@ -32,6 +40,7 @@
     "@fullcalendar/list": "^4.4.2",
     "@fullcalendar/timegrid": "^4.4.2",
     "@ng-bootstrap/ng-bootstrap": "^4.0.3",
+    "@types/express": "^4.17.11",
     "@types/jquery": "^3.5.5",
     "angular-admin-lte": "^2.0.0",
     "bootstrap": "^4.6.0",
@@ -40,11 +49,11 @@
     "express": "^4.17.1",
     "jquery": "^3.6.0",
     "ngx-ui-loader": "^7.2.2",
+    "nodemon": "^2.0.7",
     "path": "^0.12.7",
     "rxjs": "~6.4.0",
     "rxjs-compat": "^6.6.7",
     "tslib": "^1.14.1",
-    "typescript": "~3.2.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
@@ -55,7 +64,7 @@
     "@types/cors": "^2.8.10",
     "@types/jasmine": "^2.8.17",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "~8.9.4",
+    "@types/node": "^8.10.66",
     "codelyzer": "~4.5.0",
     "enhanced-resolve": "^3.3.0",
     "jasmine-core": "~2.99.1",
@@ -66,8 +75,21 @@
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "^5.4.4",
-    "ts-node": "~7.0.0",
+    "ts-node": "^7.0.1",
     "tslint": "~5.11.0",
-    "typescript": "~3.2.2"
-  }
+    "typescript": "^3.9.9"
+  },
+  "description": "",
+  "main": "app/server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/officiallx/angularFrontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/officiallx/angularFrontend/issues"
+  },
+  "homepage": "https://github.com/officiallx/angularFrontend#readme"
 }
