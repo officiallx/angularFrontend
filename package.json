@@ -16,7 +16,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "node app/server.js",
+    "start": "node server.js",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -82,7 +82,7 @@
     "typescript": "^3.2.4"
   },
   "description": "",
-  "main": "app/server.js",
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/officiallx/angularFrontend.git"
