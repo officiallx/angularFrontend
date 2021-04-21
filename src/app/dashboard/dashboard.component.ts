@@ -13,11 +13,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DashboardComponent implements OnInit {
 
-  private orders: any;
-  private events: any;
-  private users: any;
-  private staffs: any;
-  constructor(private http: HttpClient) { }
+  public orders: any;
+  public events: any;
+  public users: any;
+  public staffs: any;
+  constructor(public http: HttpClient) { }
 
   ngOnInit() {
     document.addEventListener('DOMContentLoaded', function() {

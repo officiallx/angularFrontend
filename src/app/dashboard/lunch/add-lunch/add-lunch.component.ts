@@ -12,10 +12,10 @@ import { PackageService } from 'src/app/shared-service/package.service';
 })
 export class AddLunchComponent implements OnInit {
 
-  private lunch:Lunch;
-  private Package: Package = new Package();
-  private packageList: Array<Package> =  new Array<Package>();
-  constructor(private lunchService:LunchService,private _rotuer:Router, private packageService: PackageService) { }
+  public lunch:Lunch;
+  public Package: Package = new Package();
+  public packageList: Array<Package> =  new Array<Package>();
+  constructor(public lunchService:LunchService,public _rotuer:Router, public packageService: PackageService) { }
 
   ngOnInit() {
     this.lunch=this.lunchService.getter();
