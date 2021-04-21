@@ -4,7 +4,6 @@ import { PackageService } from '../../shared-service/package.service';
 import { Router } from '@angular/router';
 import { Event } from '../../models/event';
 import { EventsService } from '../../shared-service/events.service';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-packages',
@@ -13,11 +12,11 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class PackagesComponent implements OnInit {
 
-  private apackage: Package[];
-  private event: Event[];
-  private eventid: any;
+  public apackage: Package[];
+  public event: Event[];
+  public eventid: any;
   // event1 : Event = new Event();
-  constructor(private packageService: PackageService, private _router: Router, private eventService: EventsService
+  constructor(public packageService: PackageService, public _router: Router, public eventService: EventsService
     ) { }
   // @Input() list: any;
 

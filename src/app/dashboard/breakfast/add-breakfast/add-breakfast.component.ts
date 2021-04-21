@@ -12,10 +12,10 @@ import { PackageService } from 'src/app/shared-service/package.service';
 })
 export class AddBreakfastComponent implements OnInit {
 
-  private breakfast:Breakfast = new Breakfast();
-  private Package: Package = new Package();
-  private packageList: Array<Package> =  new Array<Package>();
-  constructor(private breakfastService:BreakfastService,private _rotuer:Router, private packageService: PackageService) { }
+  public breakfast:Breakfast = new Breakfast();
+  public Package: Package = new Package();
+  public packageList: Array<Package> =  new Array<Package>();
+  constructor(public breakfastService:BreakfastService,public _rotuer:Router, public packageService: PackageService) { }
 
   ngOnInit() {
     this.breakfast=this.breakfastService.getter();
@@ -30,7 +30,7 @@ export class AddBreakfastComponent implements OnInit {
 
   processForm(){
     this.breakfast.aPackage = this.Package;
-    
+
     if(this.breakfast.breakfastId  === undefined){
       console.log(this.breakfast);
        this.breakfastService.createBreakfast(this.breakfast).subscribe((breakfast)=>{

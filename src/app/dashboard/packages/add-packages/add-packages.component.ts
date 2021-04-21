@@ -12,11 +12,11 @@ import { EventsService } from 'src/app/shared-service/events.service';
   styleUrls: ['./add-packages.component.css']
 })
 export class AddPackagesComponent implements OnInit {
-  private event:Event = new Event();
+  public event:Event = new Event();
   selectedFile = null;
-  url: string = "http://localhost:8080/api"
-  private package:Package;
-  eventId: Number; 
+  url: string = "https://e-catering.herokuapp.com/api"
+  public package:Package;
+  eventId: Number;
   constructor(private packageService:PackageService,private _rotuer:Router,private http: HttpClient, private eventsService: EventsService) { }
 
   ngOnInit() {
@@ -39,7 +39,7 @@ export class AddPackagesComponent implements OnInit {
           this._rotuer.navigateByUrl('/dashboard', { skipLocationChange: true }).then(() =>
           this._rotuer.navigate(['/packages']));
         });
-    
+
   }
   processForm(){
     if(this.package.packageId==undefined){

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import{HttpResponse} from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 
@@ -13,22 +12,22 @@ import { Event } from '../models/event';
 
 @Injectable()
 export class EventsService {
-  private baseUrl:string ='https://e-catering.herokuapp.com/api';
-  private headers = new HttpHeaders({'Content-Type':'application/json'});
-  private options = {headers:this.headers};
-  private event = new Event();
-  constructor(private httpClient:HttpClient) { }
+  public baseUrl:string ='https://e-catering.herokuapp.com/api';
+  public headers = new HttpHeaders({'Content-Type':'application/json'});
+  public options = {headers:this.headers};
+  public event = new Event();
+  constructor(public httpClient:HttpClient) { }
 
   getEvents(){
 
     return this.httpClient.get(this.baseUrl+'/events');
   }
 
-  getEvent(eventId:Number){
+  getEvent(eventId:number){
 
     return this.httpClient.get(this.baseUrl+'/event'+eventId);
   }
-  deleteEvent(eventId:Number){
+  deleteEvent(eventId:number){
 
     return this.httpClient.delete(this.baseUrl+'/event/'+eventId);
   }

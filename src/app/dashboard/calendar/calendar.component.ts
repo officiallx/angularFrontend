@@ -14,13 +14,13 @@ import { Router } from '@angular/router';
 export class CalendarComponent implements OnInit {
 
   constructor(
-    private router: Router
+    public router: Router
   ) { }
 
   ngOnInit() {
     document.addEventListener('DOMContentLoaded', function() {
       var calendarEl = document.getElementById('calendar');
-    
+
       var calendar = new Calendar(calendarEl, {
         plugins: [ dayGridPlugin, timeGridPlugin, listPlugin ],
         defaultView: 'dayGridMonth'
@@ -28,7 +28,7 @@ export class CalendarComponent implements OnInit {
 
       calendar.render();
 
-    });    
+    });
   }
 
 }

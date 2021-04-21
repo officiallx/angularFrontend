@@ -10,8 +10,8 @@ import { Address } from 'src/app/models/address';
 })
 export class AddAddressComponent implements OnInit {
 
-  private address:Address = new Address();
-  constructor(private addressService:AddressService,private _rotuer:Router) { }
+  public address:Address = new Address();
+  constructor(public addressService:AddressService,public _rotuer:Router) { }
 
   ngOnInit() {
     this.address=this.addressService.getter();

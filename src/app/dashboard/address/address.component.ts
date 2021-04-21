@@ -11,8 +11,8 @@ import { Observable } from 'rxjs';
 })
 export class AddressComponent implements OnInit {
 
-  private addresses: Address[];
-  constructor(private addressService:AddressService, private _router:Router) { }
+  public addresses: Address[];
+  constructor(public addressService:AddressService, public _router:Router) { }
 
   ngOnInit() {
     this.addressService.getAllAddress().subscribe((addresses: Address[])=>{
@@ -41,9 +41,9 @@ export class AddressComponent implements OnInit {
         error => console.log(error));
   }
 
-  
 
-   updateAddress(address: Address){  
+
+   updateAddress(address: Address){
      this.addressService.setter(address);
      this._router.navigate(['/add-address']);
 
@@ -53,7 +53,7 @@ export class AddressComponent implements OnInit {
    let address = new Address();
     this.addressService.setter(address);
      this._router.navigate(['/add-address']);
-   
+
    }
 
 }

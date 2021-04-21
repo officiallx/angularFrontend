@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 })
 export class PositionComponent implements OnInit {
 
-  private position:Position[];
-  constructor(private positionService:PositionService, private _router:Router) { }
+  public position:Position[];
+  constructor(public positionService:PositionService, public _router:Router) { }
 
   ngOnInit() {
     this.positionService.getPositions().subscribe((position: Position[])=>{
@@ -31,16 +31,16 @@ export class PositionComponent implements OnInit {
     });
   }
 
-   updatePosition(position: Position){  
+   updatePosition(position: Position){
      this.positionService.setter(position);
      this._router.navigate(['/add-position']);
    }
-   
+
    newPosition(){
    let position = new Position();
     this.positionService.setter(position);
      this._router.navigate(['/add-position']);
-   
+
    }
 
 }

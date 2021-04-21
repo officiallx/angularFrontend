@@ -10,8 +10,8 @@ import { BreakfastService } from 'src/app/shared-service/breakfast.service';
 })
 export class BreakfastComponent implements OnInit {
 
-  private breakfast:Breakfast[];
-  constructor(private breakfastService:BreakfastService, private _router:Router) { }
+  public breakfast:Breakfast[];
+  constructor(public breakfastService:BreakfastService, public _router:Router) { }
 
   ngOnInit() {
     this.breakfastService.getAllBreakfast().subscribe((breakfasts: Breakfast[])=>{
@@ -31,7 +31,7 @@ export class BreakfastComponent implements OnInit {
     });
   }
 
-   updateBreakfast(breakfast: Breakfast){  
+   updateBreakfast(breakfast: Breakfast){
      this.breakfastService.setter(breakfast);
      this._router.navigate(['/add-breakfast']);
 
@@ -41,7 +41,7 @@ export class BreakfastComponent implements OnInit {
    let breakfast = new Breakfast();
     this.breakfastService.setter(breakfast);
      this._router.navigate(['/add-breakfast']);
-   
+
    }
 
 }

@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 })
 export class AddPositionComponent implements OnInit {
 
-  private position:Position;
-  constructor(private positionService:PositionService,private _rotuer:Router) { }
+  public position:Position;
+  constructor(public positionService:PositionService,public _rotuer:Router) { }
 
   ngOnInit() {
     this.position=this.positionService.getter();

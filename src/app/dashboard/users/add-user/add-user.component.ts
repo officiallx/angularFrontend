@@ -9,9 +9,9 @@ import { UserService } from 'src/app/shared-service/user.service';
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit {
-  private user:ApplicationUser;
+  public user:ApplicationUser;
 
-  constructor(private _userService:UserService,private _rotuer:Router) { }
+  constructor(public _userService:UserService,public _rotuer:Router) { }
 
 
   ngOnInit() {

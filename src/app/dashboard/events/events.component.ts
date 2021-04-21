@@ -14,9 +14,9 @@ import { PackagesComponent } from '../packages/packages.component';
 })
 export class EventsComponent implements OnInit {
 
-  private event: any;
-  private share: any;
-  constructor(private eventService: EventsService, private _router: Router, private http: HttpClient
+  public event: any;
+  public share: any;
+  constructor(public eventService: EventsService, public _router: Router, public http: HttpClient
     ) { }
 
   ngOnInit() {

@@ -11,13 +11,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AddEventsComponent implements OnInit {
 
-  private event:Event = new Event();
+  public event:Event = new Event();
   selectedFile = null;
-  url: string = "http://localhost:8080/api"
+  url: string = "https://e-catering.herokuapp.com/api"
   constructor(
-    private eventService:EventsService,
-    private _rotuer:Router, 
-    private http: HttpClient) { }
+    public eventService:EventsService,
+    public _rotuer:Router,
+    public http: HttpClient) { }
 
   ngOnInit() {
     this.event=this.eventService.getter();
@@ -33,7 +33,7 @@ export class AddEventsComponent implements OnInit {
           this._rotuer.navigateByUrl('/dashboard', { skipLocationChange: true }).then(() =>
           this._rotuer.navigate(['/event']));
         });
-    
+
   }
 
   onFileSelected(event){

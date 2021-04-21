@@ -8,11 +8,11 @@ import { EventsService } from './events.service';
   providedIn: 'root'
 })
 export class PackageService {
-  private baseUrl = 'https://e-catering.herokuapp.com/api';
-  private headers = new HttpHeaders({'Content-Type': 'application/json'});
-  private options = {headers: this.headers};
-  private package = new Package();
-  constructor(private httpClient: HttpClient, private eventsService: EventsService) { }
+  public baseUrl = 'https://e-catering.herokuapp.com/api';
+  public headers = new HttpHeaders({'Content-Type': 'application/json'});
+  public options = {headers: this.headers};
+  public package = new Package();
+  constructor(public httpClient: HttpClient, private eventsService: EventsService) { }
 
   getAll() {
     return this.httpClient.get(this.baseUrl + '/event/getAll');

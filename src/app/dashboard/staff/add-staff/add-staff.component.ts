@@ -14,15 +14,15 @@ import { Position } from 'src/app/models/position';
 })
 export class AddStaffComponent implements OnInit {
 
-  private staff:Staff;
-  private addressList: Array<Address> = new Array<Address>();
-  private positionList: Array<Position> = new Array<Position>();
-  private Address: Address = new Address();
-  private Position: Position = new Position();
-  constructor(private staffService:StaffService,
-              private rotuer:Router,
-              private addressService: AddressService,
-              private positionService: PositionService) { }
+  public staff:Staff;
+  public addressList: Array<Address> = new Array<Address>();
+  public positionList: Array<Position> = new Array<Position>();
+  public Address: Address = new Address();
+  public Position: Position = new Position();
+  constructor(public staffService:StaffService,
+              public rotuer:Router,
+              public addressService: AddressService,
+              public positionService: PositionService) { }
 
   ngOnInit() {
     this.staff=this.staffService.getter();

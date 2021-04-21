@@ -12,8 +12,8 @@ export class UsersComponent implements OnInit {
 
   showSpinner: boolean = true;
 
-  private users: ApplicationUser[];
-  constructor(private _userService: UserService, private _router: Router) { }
+  public users: ApplicationUser[];
+  constructor(public _userService: UserService, public _router: Router) { }
 
   ngOnInit() {
     this._userService.getUsers().subscribe((users: ApplicationUser[]) => {
@@ -38,7 +38,7 @@ export class UsersComponent implements OnInit {
     this._router.navigate(['/add-user']);
 
   }
-  
+
   newUser() {
     let user = new ApplicationUser();
     this._userService.setter(user);

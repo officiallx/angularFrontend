@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import{HttpResponse} from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 
@@ -13,22 +12,22 @@ import { Orders } from '../models/orders';
 
 @Injectable()
 export class OrderService {
-  private baseUrl:string='https://e-catering.herokuapp.com/api';
-  private headers = new HttpHeaders({'Content-Type':'application/json'});
-  private options = {headers:this.headers};
-  private order = new Orders();
-  constructor(private httpClient:HttpClient) { }
+  public baseUrl:string='https://e-catering.herokuapp.com/api';
+  public headers = new HttpHeaders({'Content-Type':'application/json'});
+  public options = {headers:this.headers};
+  public order = new Orders();
+  constructor(public httpClient:HttpClient) { }
 
   getOrders(){
 
     return this.httpClient.get(this.baseUrl+'/order');
   }
 
-  getOrder(orderId:Number){
+  getOrder(orderId:number){
 
     return this.httpClient.get(this.baseUrl+'/order'+orderId);
   }
-  deleteOrder(orderId:Number){
+  deleteOrder(orderId:number){
 
     return this.httpClient.delete(this.baseUrl+'/order/'+orderId);
   }

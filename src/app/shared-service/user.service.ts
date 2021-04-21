@@ -13,22 +13,22 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class UserService {
-  private baseUrl:string='https://e-catering.herokuapp.com/api';
-  private headers = new HttpHeaders({'Content-Type':'application/json'});
-  private options = {headers:this.headers};
-  private user = new ApplicationUser();
-  constructor(private httpClient:HttpClient) { }
+  public baseUrl:string='https://e-catering.herokuapp.com/api';
+  public headers = new HttpHeaders({'Content-Type':'application/json'});
+  public options = {headers:this.headers};
+  public user = new ApplicationUser();
+  constructor(public httpClient:HttpClient) { }
 
   getUsers(){
 
     return this.httpClient.get(this.baseUrl+'/users');
   }
 
-  getUser(id:Number){
+  getUser(id:number){
 
     return this.httpClient.get(this.baseUrl+'/user'+id);
   }
-  deleteUser(id:Number){
+  deleteUser(id:number){
 
     return this.httpClient.delete(this.baseUrl+'/user/'+id);
   }

@@ -8,11 +8,11 @@ import { Observable } from 'rxjs';
 })
 export class PositionService {
 
-  private baseUrl:string='https://e-catering.herokuapp.com/api';
-  private headers = new HttpHeaders({'Content-Type':'application/json'});
-  private options = {headers:this.headers};
-  private position = new Position();
-  constructor(private httpClient:HttpClient) { }
+  public baseUrl:string='https://e-catering.herokuapp.com/api';
+  public headers = new HttpHeaders({'Content-Type':'application/json'});
+  public options = {headers:this.headers};
+  public position = new Position();
+  constructor(public httpClient:HttpClient) { }
 
   getPositions(){
 

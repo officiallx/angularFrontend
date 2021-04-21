@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import{HttpResponse} from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 
@@ -13,21 +12,21 @@ import { Address } from '../models/address';
 
 @Injectable()
 export class AddressService {
-  private baseUrl:string='https://e-catering.herokuapp.com/api';
-  private headers = new HttpHeaders({'Content-Type':'application/json'});
-  private options = {headers:this.headers};
-  private address = new Address();
-  constructor(private httpClient:HttpClient) { }
+  public baseUrl:string='https://e-catering.herokuapp.com/api';
+  public headers = new HttpHeaders({'Content-Type':'application/json'});
+  public options = {headers:this.headers};
+  public address = new Address();
+  constructor(public httpClient:HttpClient) { }
 
   getAllAddress(){
     return this.httpClient.get(this.baseUrl+'/address');
   }
 
-  getAddress(aId:Number){
+  getAddress(aId:number){
 
     return this.httpClient.get(this.baseUrl+'/address'+aId);
   }
-  deleteAddress(aId:Number){
+  deleteAddress(aId:number){
 
     return this.httpClient.delete(this.baseUrl+'/address/'+aId);
   }

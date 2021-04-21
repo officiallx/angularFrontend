@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 })
 export class StaffComponent implements OnInit {
 
-  private staff:Staff[];
-  constructor(private staffService:StaffService, private _router:Router) { }
+  public staff:Staff[];
+  constructor(public staffService:StaffService, public _router:Router) { }
 
   ngOnInit() {
     this.staffService.getAllStaff().subscribe((staff: Staff[])=>{
@@ -31,7 +31,7 @@ export class StaffComponent implements OnInit {
     });
   }
 
-   updateStaff(staff: Staff){  
+   updateStaff(staff: Staff){
      console.log(staff);
      this.staffService.setter(staff);
      this._router.navigate(['/add-staff']);
@@ -42,7 +42,7 @@ export class StaffComponent implements OnInit {
    let staff = new Staff();
     this.staffService.setter(staff);
      this._router.navigate(['/add-staff']);
-   
+
    }
 
 }

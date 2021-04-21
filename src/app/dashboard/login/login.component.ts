@@ -11,15 +11,15 @@ import { UserService } from 'src/app/shared-service/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  private share: any;
-  private user: ApplicationUser = new ApplicationUser();
-  private headers = new HttpHeaders({
+  public share: any;
+  public user: ApplicationUser = new ApplicationUser();
+  public headers = new HttpHeaders({
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, DELETE, PUT',
   });
   private options = {headers: this.headers};
-   constructor(private http: HttpClient, private _router: Router, private userService: UserService) { }
+   constructor(public http: HttpClient, public _router: Router, public userService: UserService) { }
 
   ngOnInit() {
   }

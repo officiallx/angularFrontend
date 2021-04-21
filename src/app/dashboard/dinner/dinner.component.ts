@@ -10,8 +10,8 @@ import { DinnerService } from 'src/app/shared-service/dinner.service';
 })
 export class DinnerComponent implements OnInit {
 
-  private dinner:Dinner[];
-  constructor(private dinnerService:DinnerService, private _router:Router) { }
+  public dinner:Dinner[];
+  constructor(public dinnerService:DinnerService, public _router:Router) { }
 
   ngOnInit() {
     this.dinnerService.getAllDinners().subscribe((dinner: Dinner[])=>{
@@ -30,7 +30,7 @@ export class DinnerComponent implements OnInit {
     });
   }
 
-   updateDinner(dinner: Dinner){  
+   updateDinner(dinner: Dinner){
      this.dinnerService.setter(dinner);
      this._router.navigate(['/add-dinner']);
 
@@ -40,7 +40,7 @@ export class DinnerComponent implements OnInit {
    let dinner = new Dinner();
     this.dinnerService.setter(dinner);
      this._router.navigate(['/add-dinner']);
-   
+
    }
 
 }

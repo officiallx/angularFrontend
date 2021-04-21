@@ -12,10 +12,10 @@ import { Package } from 'src/app/models/package';
 })
 export class AddDinnerComponent implements OnInit {
 
-  private dinner:Dinner;
-  private Package: Package = new Package();
-  private packageList: Array<Package> =  new Array<Package>();
-  constructor(private dinnerService:DinnerService,private _rotuer:Router,private packageService: PackageService) { }
+  public dinner:Dinner;
+  public Package: Package = new Package();
+  public packageList: Array<Package> =  new Array<Package>();
+  constructor(public dinnerService:DinnerService,public _rotuer:Router,public packageService: PackageService) { }
 
   ngOnInit() {
     this.dinner=this.dinnerService.getter();

@@ -10,9 +10,9 @@ import { OrderService } from 'src/app/shared-service/order.service';
 })
 export class OrdersComponent implements OnInit {
 
-  private order:Orders[];
-  private value: String;
-  constructor(private orderService:OrderService, private _router:Router) { }
+  public order:Orders[];
+  public value: String;
+  constructor(public orderService:OrderService, public _router:Router) { }
 
   ngOnInit() {
     this.orderService.getOrders().subscribe((order: Orders[])=>{
@@ -22,7 +22,7 @@ export class OrdersComponent implements OnInit {
       console.log(error);
     })
   }
-  
+
   deleteOrder(orders: Orders){
     this.orderService.deleteOrder(orders.orderId).subscribe((data)=>{
         this.order.splice(this.order.indexOf(orders),1);
@@ -31,7 +31,7 @@ export class OrdersComponent implements OnInit {
     });
   }
 
-  //  updateOrder(order: Orders){  
+  //  updateOrder(order: Orders){
   //    this.orderService.setter(order);
   //    this._router.navigate(['/add-event']);
 
@@ -41,7 +41,7 @@ export class OrdersComponent implements OnInit {
   //  let order = new Orders();
   //   this.orderService.setter(order);
   //    this._router.navigate(['/add-event']);
-   
+
   //  }
 
 }
