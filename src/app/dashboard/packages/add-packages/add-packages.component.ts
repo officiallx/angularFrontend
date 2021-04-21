@@ -16,7 +16,7 @@ export class AddPackagesComponent implements OnInit {
   selectedFile = null;
   url: string = "https://e-catering.herokuapp.com/api"
   public package:Package;
-  eventId: Number;
+  eventId: number;
   constructor(private packageService:PackageService,private _rotuer:Router,private http: HttpClient, private eventsService: EventsService) { }
 
   ngOnInit() {
