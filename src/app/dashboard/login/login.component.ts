@@ -18,7 +18,14 @@ export class LoginComponent implements OnInit {
   public headers = new HttpHeaders({
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': this.loginUri + 'login',
-    'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, DELETE, PUT',
+    'Access-Control-Allow-Methods': 'POST, GET, PUT',
+    'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Origin,Accept, ' +
+      'X-Requested-With, Content-Type, ' +
+      'Access-Control-Request-Method, ' +
+      'Access-Control-Request-Headers',
+    'Access-Control-Max-Age': '86400',
+    'Access-Control-Allow-Credentials': 'true'
+
   });
   private options = {headers: this.headers};
    constructor(public http: HttpClient, public _router: Router, public userService: UserService) { }
