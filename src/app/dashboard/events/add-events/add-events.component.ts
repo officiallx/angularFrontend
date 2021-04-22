@@ -14,7 +14,7 @@ export class AddEventsComponent implements OnInit {
 
   public event:Event = new Event();
   selectedFile = null;
-  url: string = environment.baseUrl;
+  url = environment.baseUrl;
   constructor(
     public eventService:EventsService,
     public _rotuer:Router,

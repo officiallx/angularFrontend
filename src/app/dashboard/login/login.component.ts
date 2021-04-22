@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   public loginUri = environment.loginURL;
   public headers = new HttpHeaders({
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': this.loginUri,
+    'Access-Control-Allow-Origin': this.loginUri + 'login',
     'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, DELETE, PUT',
   });
   private options = {headers: this.headers};
