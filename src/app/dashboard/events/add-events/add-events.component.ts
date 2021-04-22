@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { EventsService } from 'src/app/shared-service/events.service';
 import { Event } from 'src/app/models/event';
 import { HttpClient } from '@angular/common/http';
+import {environment} from '../../../../environments/environment.prod';
 
 @Component({
   selector: 'app-add-events',
@@ -13,7 +14,7 @@ export class AddEventsComponent implements OnInit {
 
   public event:Event = new Event();
   selectedFile = null;
-  url: string = "https://e-catering.herokuapp.com/api"
+  url: string = environment.baseUrl;
   constructor(
     public eventService:EventsService,
     public _rotuer:Router,
