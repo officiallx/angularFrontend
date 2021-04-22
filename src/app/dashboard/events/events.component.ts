@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { concat } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PackagesComponent } from '../packages/packages.component';
+import {environment} from '../../../environments/environment.prod';
 
 @Component({
   selector: 'app-events',
@@ -14,6 +15,7 @@ import { PackagesComponent } from '../packages/packages.component';
 })
 export class EventsComponent implements OnInit {
 
+  public baseUrl = environment.baseUrl;
   public event: any;
   public share: any;
   constructor(public eventService: EventsService, public _router: Router, public http: HttpClient
@@ -53,7 +55,7 @@ export class EventsComponent implements OnInit {
    this.eventService.setter(list);
 
    // console.log(list.eventId)
-   this.http.get('https://e-catering.herokuapp.com/api/event/' + list.eventId + '/packages').subscribe( res => {
+   this.http.get(this.baseUrl + '/event/' + list.eventId + '/packages').subscribe( res => {
 
       this.share = res;
       console.log(this.share);

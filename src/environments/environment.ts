@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://e-catering.herokuapp.com/api'
+  baseUrl: 'http://localhost:8080/api'
 };
 
 /*

@@ -18,7 +18,7 @@
     "ng": "ng",
     "heroku-postbuild": "ng build --prod && npm install -g http-server-spa",
     "start": "http-server-spa dist/my-catering-app index.html $PORT",
-    "build": "ng build --prod",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
