@@ -3,12 +3,13 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Package } from '../models/package';
 import { Observable } from 'rxjs';
 import { EventsService } from './events.service';
+import {environment} from '../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PackageService {
-  public baseUrl = 'https://e-catering.herokuapp.com/api';
+  public baseUrl = environment.baseUrl;
   public headers = new HttpHeaders({'Content-Type': 'application/json'});
   public options = {headers: this.headers};
   public package = new Package();

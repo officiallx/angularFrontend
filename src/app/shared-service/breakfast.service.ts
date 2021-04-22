@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Breakfast } from '../models/breakfast';
+import {environment} from '../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BreakfastService {
 
-  public baseUrl:string='https://e-catering.herokuapp.com/api';
+  public baseUrl = environment.baseUrl;
   public headers = new HttpHeaders({'Content-Type':'application/json'});
   public options = {headers:this.headers};
   public breakfast = new Breakfast();

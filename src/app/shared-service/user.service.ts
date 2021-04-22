@@ -8,12 +8,13 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import {ApplicationUser} from '../models/user';
 import { Observable } from 'rxjs';
+import {environment} from '../../environments/environment.prod';
 
 
 
 @Injectable()
 export class UserService {
-  public baseUrl:string='https://e-catering.herokuapp.com/api';
+  public baseUrl = environment.baseUrl;
   public headers = new HttpHeaders({'Content-Type':'application/json'});
   public options = {headers:this.headers};
   public user = new ApplicationUser();

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Event } from 'src/app/models/event';
 import { HttpClient } from '@angular/common/http';
 import { EventsService } from 'src/app/shared-service/events.service';
+import {environment} from '../../../../environments/environment.prod';
 
 @Component({
   selector: 'app-add-packages',
@@ -14,7 +15,7 @@ import { EventsService } from 'src/app/shared-service/events.service';
 export class AddPackagesComponent implements OnInit {
   public event:Event = new Event();
   selectedFile = null;
-  url: string = "https://e-catering.herokuapp.com/api"
+  url: string = environment.baseUrl;
   public package:Package;
   eventId: number;
   constructor(private packageService:PackageService,private _rotuer:Router,private http: HttpClient, private eventsService: EventsService) { }

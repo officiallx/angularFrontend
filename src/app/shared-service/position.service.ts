@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Position } from '../models/position';
 import { Observable } from 'rxjs';
+import {environment} from '../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PositionService {
 
-  public baseUrl:string='https://e-catering.herokuapp.com/api';
+  public baseUrl = environment.baseUrl;
   public headers = new HttpHeaders({'Content-Type':'application/json'});
   public options = {headers:this.headers};
   public position = new Position();
