@@ -17,8 +17,7 @@ export class LoginComponent implements OnInit {
   public loginUri = environment.loginURL;
   public headers = new HttpHeaders({
     'Content-Type': 'application/json, charset=UTF-8',
-    'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With',
-    'Access-Control-Allow-Credentials': 'true'
+    'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With'
   });
   private options = {headers: this.headers};
    constructor(public http: HttpClient, public _router: Router, public userService: UserService) { }
