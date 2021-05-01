@@ -17,13 +17,12 @@ export class LoginComponent implements OnInit {
   public loginUri = environment.loginURL;
   public headers = new HttpHeaders({
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': this.loginUri + 'login',
-    'Access-Control-Allow-Methods': 'POST, GET, PUT',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, GET, PUT , OPTIONS',
     'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Origin,Accept, ' +
       'X-Requested-With, Content-Type, ' +
       'Access-Control-Request-Method, ' +
       'Access-Control-Request-Headers',
-    'Access-Control-Max-Age': '86400',
     'Access-Control-Allow-Credentials': 'true'
 
   });
