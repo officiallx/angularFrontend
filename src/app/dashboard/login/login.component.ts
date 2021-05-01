@@ -16,15 +16,10 @@ export class LoginComponent implements OnInit {
   public user: ApplicationUser = new ApplicationUser();
   public loginUri = environment.loginURL;
   public headers = new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'POST, GET, PUT , OPTIONS',
-    'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Origin,Accept, ' +
-      'X-Requested-With, Content-Type, ' +
-      'Access-Control-Request-Method, ' +
-      'Access-Control-Request-Headers',
+    'Content-Type': 'application/json, charset=UTF-8',
+    'Access-Control-Allow-Origin': this.loginUri + 'login' ,
+    'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With',
     'Access-Control-Allow-Credentials': 'true'
-
   });
   private options = {headers: this.headers};
    constructor(public http: HttpClient, public _router: Router, public userService: UserService) { }
